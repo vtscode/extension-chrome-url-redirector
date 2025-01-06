@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "URL Replacer",
+    "version": "1.2",
+    "description": "Replace URLs with a custom pattern.",
+    "author": "Riventus AHA",
+    "permissions": [
+      "webNavigation",
+      "storage",
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "http://CURRENT.URL/*",
+      "https://REPLACE.URL/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "http://CURRENT.URL/*"
+        ],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
